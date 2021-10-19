@@ -37,7 +37,7 @@ jobs:
         run: npm ci
 
       - name: Rebuild the dist/ directory
-        run: npm run build-dist
+        run: npm run build-action
 
       - name: Compare the expected and actual dist/ directories
         id: diff-dist-filess
