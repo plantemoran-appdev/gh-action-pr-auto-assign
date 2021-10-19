@@ -40,10 +40,10 @@ jobs:
         run: npm run build-dist
 
       - name: Compare the expected and actual dist/ directories
-        id: diff-dist-files
+        id: diff-dist-filess
         run: |
-          echo "git diff: git diff --ignore-all-space dist/index.js | wc -l"
-          git diff --ignore-all-space dist/index.js | wc -l
+          echo "git diff: git diff --unified=5 --ignore-all-space dist/index.js | wc -l"
+          git diff --unified=5 --ignore-all-space dist/index.js | wc -l
           if [ "$(git diff --ignore-all-space dist/index.js | wc -l)" -gt "0" ]; then
             echo "Updated dist/ files have not been committed. See status below:"
             git diff
