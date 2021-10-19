@@ -42,9 +42,9 @@ jobs:
       - name: Compare the expected and actual builtAction/ directories
         id: diff-built-files
         run: |
-          if [ "$(git diff --ignore-all-space builtAction/ | wc -l)" -gt "0" ]; then
+          if [ "$(git diff --ignore-all-space builtAction/index.js | wc -l)" -gt "0" ]; then
             echo "Updated builtAction/ files have not been committed. See status below:"
-            git diff
+            git diff --ignore-all-space builtAction/index.js
             exit 1
           fi
 
