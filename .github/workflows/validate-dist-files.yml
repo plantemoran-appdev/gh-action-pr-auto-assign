@@ -42,7 +42,9 @@ jobs:
       - name: Compare the expected and actual dist/ directories
         id: diff-dist-files
         run: |
-          if [ "$(git diff --ignore-all-space dist/ | wc -l)" -gt "0" ]; then
+          echo "git diff: git diff --ignore-all-space dist/index.js | wc -l"
+          git diff --ignore-all-space dist/index.js | wc -l
+          if [ "$(git diff --ignore-all-space dist/index.js | wc -l)" -gt "0" ]; then
             echo "Updated dist/ files have not been committed. See status below:"
             git diff
             exit 1
