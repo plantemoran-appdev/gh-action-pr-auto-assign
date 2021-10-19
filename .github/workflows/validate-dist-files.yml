@@ -1,7 +1,7 @@
 # since we're using vercel/ncc to package up our action (so we don't have to commit node_modules)
-# we need to ensure that the dist/ files have been created/updated properly
+# we need to ensure that the builtAction/ files have been created/updated properly
 
-name: Validate dist/ files
+name: Validate builtAction/ files
 
 on:
   push:
@@ -9,20 +9,20 @@ on:
       - develop
     paths:
       - 'src/**'
-      - 'dist/**'
+      - 'builtAction/**'
 
   pull_request:
     branches:
       - develop
     paths:
       - 'src/**'
-      - 'dist/**'
+      - 'builtAction/**'
 
   workflow_dispatch:
 
 jobs:
-  validate-dist-files:
-    name: Validate dist/ files
+  validate-built-files:
+    name: Validate builtAction/ files
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -36,25 +36,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Rebuild the dist/ directory
+      - name: Rebuild the action
         run: npm run build-action
 
-      - name: Compare the expected and actual dist/ directories
-        id: diff-dist-filess
+      - name: Compare the expected and actual builtAction/ directories
+        id: diff-built-files
         run: |
-          echo "git diff: git diff --unified=5 --ignore-all-space finalAction/index.js | wc -l"
-          git diff --unified=5 --ignore-all-space finalAction/index.js | wc -l
-          git diff --unified=5 --ignore-all-space finalAction/index.js
-          if [ "$(git diff --ignore-all-space finalAction/index.js | wc -l)" -gt "0" ]; then
-            echo "Updated finalAction/ files have not been committed. See status below:"
+          if [ "$(git diff --ignore-all-space builtAction/ | wc -l)" -gt "0" ]; then
+            echo "Updated builtAction/ files have not been committed. See status below:"
             git diff
             exit 1
           fi
 
       # if diff-dist-files failed, upload the expected diff/ as an artifact
-      # - name: Upload expected dist/ files
-      #   uses: actions/upload-artifact@v2
-      #   if: ${{ failure() && steps.diff-dist-files.conclusion == 'failure' }}
-      #   with:
-      #     name: dist
-      #     path: dist/
+      - name: Upload expected builtAction/ files
+        uses: actions/upload-artifact@v2
+        if: ${{ failure() && steps.diff-built-files.conclusion == 'failure' }}
+        with:
+          name: builtAction
+          path: builtAction/
