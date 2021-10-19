@@ -44,7 +44,8 @@ jobs:
         run: |
           if [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then
             echo "Updated dist/ files have not been committed. See status below:"
-            git diff -p
+            git diff
+            git show
             exit 1
           fi
 
