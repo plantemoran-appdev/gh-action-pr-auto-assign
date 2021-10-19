@@ -42,19 +42,19 @@ jobs:
       - name: Compare the expected and actual dist/ directories
         id: diff-dist-filess
         run: |
-          echo "git diff: git diff --unified=5 --ignore-all-space dist/index.js | wc -l"
-          git diff --unified=5 --ignore-all-space dist/index.js | wc -l
-          git diff --unified=5 --ignore-all-space dist/index.js
-          if [ "$(git diff --ignore-all-space dist/index.js | wc -l)" -gt "0" ]; then
-            echo "Updated dist/ files have not been committed. See status below:"
+          echo "git diff: git diff --unified=5 --ignore-all-space finalAction/index.js | wc -l"
+          git diff --unified=5 --ignore-all-space finalAction/index.js | wc -l
+          git diff --unified=5 --ignore-all-space finalAction/index.js
+          if [ "$(git diff --ignore-all-space finalAction/index.js | wc -l)" -gt "0" ]; then
+            echo "Updated finalAction/ files have not been committed. See status below:"
             git diff
             exit 1
           fi
 
       # if diff-dist-files failed, upload the expected diff/ as an artifact
-      - name: Upload expected dist/ files
-        uses: actions/upload-artifact@v2
-        if: ${{ failure() && steps.diff-dist-files.conclusion == 'failure' }}
-        with:
-          name: dist
-          path: dist/
+      # - name: Upload expected dist/ files
+      #   uses: actions/upload-artifact@v2
+      #   if: ${{ failure() && steps.diff-dist-files.conclusion == 'failure' }}
+      #   with:
+      #     name: dist
+      #     path: dist/
