@@ -1,0 +1,15 @@
+name: 'Pull Request Auto-Assignment for AppDev'
+description: 'Adds pull request reviewers and assignees for AppDev'
+author: 'Michael Obrycki'
+
+inputs:
+  githubToken:
+    description: The GitHub token from the workflow context
+    required: true
+  additionalAccessPat:
+    description: The PAT that will be used for additional access (must have read:org permissions)
+    required: true
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
