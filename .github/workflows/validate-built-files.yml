@@ -48,7 +48,7 @@ jobs:
             exit 1
           fi
 
-      # if diff-dist-files failed, upload the expected diff/ as an artifact
+      # if diff-built-files failed, upload the expected diff/ as an artifact
       - name: Upload expected builtAction/ files
         uses: actions/upload-artifact@v2
         if: ${{ failure() && steps.diff-built-files.conclusion == 'failure' }}
