@@ -4,7 +4,6 @@ import pullRequestTeams from './pullRequestTeams';
 import repoTopics from './repositoryTopics';
 
 async function run() {
-  var x = 0;
   try {
     // ensure we're in a pull request
     ensurePullRequest();
