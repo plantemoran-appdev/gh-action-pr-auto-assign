@@ -1,0 +1,25 @@
+{
+  "root": true,
+
+  "extends": ["eslint:recommended"],
+
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+
+  "globals": {},
+
+  "rules": {
+    "no-console": "error",
+    "no-alert": "error",
+    "no-var": "error"
+  }
+}
