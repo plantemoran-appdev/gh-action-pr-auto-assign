@@ -7,7 +7,7 @@ inputs:
     description: The GitHub token from the workflow context
     required: true
   additionalAccessPat:
-    description: A PAT that will be used for additional access
+    description: The PAT that will be used for additional access (must have read:org permissions)
     required: true
 
 runs:
