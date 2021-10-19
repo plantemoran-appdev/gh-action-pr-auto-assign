@@ -1,5 +1,7 @@
 # GitHub Action: Pull Request Auto-Assignment for AppDev
 
+[![Linting][img-gh-action-lint-badge]][gh-action-lint]
+
 Custom GitHub action to add pull request reviewers and assignees for AppDev
 
 ## Project Setup
@@ -66,3 +68,8 @@ with:
 ```
 
 See the actions tab in the consuming repository for runs of this action! :rocket:
+
+<!-- reference urls -->
+
+[gh-action-lint]: https://github.com/plantemoran-appdev/gh-action-pr-auto-assign/actions/workflows/linting.yaml
+[img-gh-action-lint-badge]: https://github.com/plantemoran-appdev/gh-action-pr-auto-assign/actions/workflows/linting.yaml/badge.svg
