@@ -44,6 +44,7 @@ jobs:
         run: |
           echo "git diff: git diff --unified=5 --ignore-all-space dist/index.js | wc -l"
           git diff --unified=5 --ignore-all-space dist/index.js | wc -l
+          git diff --unified=5 --ignore-all-space dist/index.js
           if [ "$(git diff --ignore-all-space dist/index.js | wc -l)" -gt "0" ]; then
             echo "Updated dist/ files have not been committed. See status below:"
             git diff
