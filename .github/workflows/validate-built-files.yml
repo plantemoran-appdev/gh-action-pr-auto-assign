@@ -1,7 +1,7 @@
 # since we're using vercel/ncc to package up our action (so we don't have to commit node_modules)
-# we need to ensure that the builtAction/ files have been created/updated properly
+# we need to ensure that the dist/ files have been created/updated properly
 
-name: Validate builtAction/ files
+name: Validate dist/ files
 
 on:
   push:
@@ -9,20 +9,20 @@ on:
       - develop
     paths:
       - 'src/**'
-      - 'builtAction/**'
+      - 'dist/**'
 
   pull_request:
     branches:
       - develop
     paths:
       - 'src/**'
-      - 'builtAction/**'
+      - 'dist/**'
 
   workflow_dispatch:
 
 jobs:
-  validate-built-files:
-    name: Validate builtAction/ files
+  validate-dist-files:
+    name: Validate dist/ files
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -39,19 +39,19 @@ jobs:
       - name: Rebuild the action
         run: npm run build-action
 
-      - name: Compare the expected and actual builtAction/ directories
+      - name: Compare the expected and actual dist/ directories
         id: diff-built-files
         run: |
-          if [ "$(git diff --ignore-all-space builtAction/index.js | wc -l)" -gt "0" ]; then
-            echo "Updated builtAction/ files have not been committed. See status below:"
-            git diff --ignore-all-space builtAction/index.js
+          if [ "$(git diff --ignore-all-space dist/index.js | wc -l)" -gt "0" ]; then
+            echo "Updated dist/ files have not been committed. See status below:"
+            git diff --ignore-all-space dist/index.js
             exit 1
           fi
 
       # if diff-built-files failed, upload the expected diff/ as an artifact
-      - name: Upload expected builtAction/ files
+      - name: Upload expected dist/ files
         uses: actions/upload-artifact@v2
         if: ${{ failure() && steps.diff-built-files.conclusion == 'failure' }}
         with:
-          name: builtAction
-          path: builtAction/
+          name: dist
+          path: dist/

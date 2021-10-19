@@ -21,7 +21,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "build-action": "ncc build src/index.js -o builtAction --source-map --license licenses.txt",
+    "build-action": "ncc build src/index.js -o dist --source-map --license licenses.txt",
     "all": "npm run lint && npm run build-action"
   },
   "dependencies": {
