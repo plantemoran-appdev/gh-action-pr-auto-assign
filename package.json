@@ -21,8 +21,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "prepare": "ncc build src/index.js -o dist --source-map --license licenses.txt",
-    "all": "npm run lint && npm run prepare"
+    "build-dist": "ncc build src/index.js -o dist --source-map --license licenses.txt",
+    "all-tasks": "npm run lint && npm run prepare"
   },
   "dependencies": {
     "@actions/core": "^1.6.0",
