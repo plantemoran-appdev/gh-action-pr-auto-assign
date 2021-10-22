@@ -1,4 +1,4 @@
-name: 'Code Vulnerability Scanning'
+name: Code Vulnerability Scanning
 
 on:
   push:
@@ -13,25 +13,6 @@ on:
 jobs:
   analyze:
     name: Code Analysis
-    runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-
-    strategy:
-      fail-fast: false
-      matrix:
-        language: ['javascript']
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v1
-        with:
-          languages: ${{ matrix.language }}
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v1
+    uses: plantemoran-appdev/.github/.github/workflows/code-analysis-reuse.yml@develop
+    with:
+      languages: '["javascript"]'

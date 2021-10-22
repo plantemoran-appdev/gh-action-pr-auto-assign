@@ -1,6 +1,8 @@
 # GitHub Action: Pull Request Auto-Assignment for AppDev
 
 [![Linting][img-gh-action-lint-badge]][gh-action-lint]
+[![Validate Built Files][img-gh-action-vbf-badge]][gh-action-vbf]
+[![Code Vulnerability Scanning][img-gh-action-cvs-badge]][gh-action-cvs]
 
 Custom GitHub action to add pull request reviewers and assignees for AppDev
 
@@ -71,5 +73,9 @@ See the actions tab in the consuming repository for runs of this action! :rocket
 
 <!-- reference urls -->
 
-[gh-action-lint]: https://github.com/plantemoran-appdev/gh-action-pr-auto-assign/actions/workflows/linting.yaml
-[img-gh-action-lint-badge]: https://github.com/plantemoran-appdev/gh-action-pr-auto-assign/actions/workflows/linting.yaml/badge.svg
+[gh-action-cvs]: ../../../actions/workflows/code-analysis.yml
+[gh-action-lint]: ../../../actions/workflows/linting.yaml
+[gh-action-vbf]: ../../../actions/workflows/validate-built-files.yaml
+[img-gh-action-cvs-badge]: ../../../actions/workflows/code-analysis.yml/badge.svg
+[img-gh-action-lint-badge]: ../../../actions/workflows/linting.yaml/badge.svg
+[img-gh-action-vbf-badge]: ../../../actions/workflows/linting.yaml/validate-built-files.svg
