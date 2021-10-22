@@ -74,9 +74,9 @@ See the actions tab in the consuming repository for runs of this action! :rocket
 
 <!-- reference urls -->
 
-[gh-action-cvs]: ../../../actions/workflows/code-analysis.yml
-[gh-action-lint]: ../../../actions/workflows/linting.yml
-[gh-action-vbf]: ../../../actions/workflows/validate-built-files.yml
-[img-gh-action-cvs-badge]: ../../../actions/workflows/code-analysis.yml/badge.svg
-[img-gh-action-lint-badge]: ../../../actions/workflows/linting.yml/badge.svg
-[img-gh-action-vbf-badge]: ../../../actions/workflows/validate-built-files.yml/badge.svg
+[gh-action-cvs]: https://github.com/plantemoran-appdev/gh-action-pr-auto-assign/actions/workflows/code-analysis.yml
+[gh-action-lint]: https://github.com/plantemoran-appdev/gh-action-pr-auto-assign/actions/workflows/linting.yml
+[gh-action-vbf]: https://github.com/plantemoran-appdev/gh-action-pr-auto-assign/actions/workflows/validate-built-files.yml
+[img-gh-action-cvs-badge]: https://github.com/plantemoran-appdev/gh-action-pr-auto-assign/actions/workflows/code-analysis.yml/badge.svg
+[img-gh-action-lint-badge]: https://github.com/plantemoran-appdev/gh-action-pr-auto-assign/actions/workflows/linting.yml/badge.svg
+[img-gh-action-vbf-badge]: https://github.com/plantemoran-appdev/gh-action-pr-auto-assign/actions/workflows/validate-built-files.yml/badge.svg
