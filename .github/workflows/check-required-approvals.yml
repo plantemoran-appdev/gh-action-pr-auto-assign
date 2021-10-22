@@ -1,0 +1,11 @@
+name: Pull Request Required Approvals Check
+
+on:
+  pull_request_review:
+
+jobs:
+  pull-request-required-approvals-check:
+    name: Pull Request Required Approvals Check
+    uses: plantemoran-appdev/.github/.github/workflows/check-required-approvals-reuse.yml@develop
+    secrets:
+      additional-access-pat: ${{ secrets.GH_ACTION_AUTO_ASSIGN_PAT }}

@@ -18,6 +18,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint-source-code:
-    name: Lint source code
+  validate-built-files:
+    name: Validate Built Files
     uses: plantemoran-appdev/.github/.github/workflows/validate-built-files-for-custom-action-reuse.yml@develop

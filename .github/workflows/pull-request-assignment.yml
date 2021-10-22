@@ -13,6 +13,6 @@ on:
 jobs:
   pull-request-assignment:
     name: Pull Request Auto Assignment
-    uses: plantemoran-appdev/.github/.github/workflows/pull-request-assignment-reuse.yaml@develop
+    uses: plantemoran-appdev/.github/.github/workflows/pull-request-assignment-reuse.yml@develop
     secrets:
       additional-access-pat: ${{ secrets.GH_ACTION_AUTO_ASSIGN_PAT }}

@@ -2,6 +2,7 @@
 
 [![Linting][img-gh-action-lint-badge]][gh-action-lint]
 [![Validate Built Files][img-gh-action-vbf-badge]][gh-action-vbf]
+
 [![Code Vulnerability Scanning][img-gh-action-cvs-badge]][gh-action-cvs]
 
 Custom GitHub action to add pull request reviewers and assignees for AppDev
@@ -74,8 +75,8 @@ See the actions tab in the consuming repository for runs of this action! :rocket
 <!-- reference urls -->
 
 [gh-action-cvs]: ../../../actions/workflows/code-analysis.yml
-[gh-action-lint]: ../../../actions/workflows/linting.yaml
-[gh-action-vbf]: ../../../actions/workflows/validate-built-files.yaml
+[gh-action-lint]: ../../../actions/workflows/linting.yml
+[gh-action-vbf]: ../../../actions/workflows/validate-built-files.yml
 [img-gh-action-cvs-badge]: ../../../actions/workflows/code-analysis.yml/badge.svg
-[img-gh-action-lint-badge]: ../../../actions/workflows/linting.yaml/badge.svg
+[img-gh-action-lint-badge]: ../../../actions/workflows/linting.yml/badge.svg
 [img-gh-action-vbf-badge]: ../../../actions/workflows/validate-built-files.yml/badge.svg
