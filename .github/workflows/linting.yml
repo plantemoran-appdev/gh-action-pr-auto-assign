@@ -1,0 +1,17 @@
+name: Linting
+
+on:
+  push:
+    branches:
+      - develop
+
+  pull_request:
+    branches:
+      - develop
+
+  workflow_dispatch:
+
+jobs:
+  lint-source-code:
+    name: Lint source code
+    uses: plantemoran-appdev/.github/.github/workflows/linting-reuse.yml@develop
