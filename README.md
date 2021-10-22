@@ -78,4 +78,4 @@ See the actions tab in the consuming repository for runs of this action! :rocket
 [gh-action-vbf]: ../../../actions/workflows/validate-built-files.yaml
 [img-gh-action-cvs-badge]: ../../../actions/workflows/code-analysis.yml/badge.svg
 [img-gh-action-lint-badge]: ../../../actions/workflows/linting.yaml/badge.svg
-[img-gh-action-vbf-badge]: ../../../actions/workflows/linting.yaml/validate-built-files.svg
+[img-gh-action-vbf-badge]: ../../../actions/workflows/validate-built-files.yaml/badge.svg
