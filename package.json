@@ -33,6 +33,6 @@
   "devDependencies": {
     "@vercel/ncc": "^0.31.1",
     "eslint": "^8.0.1",
-    "markdownlint-cli": "^0.29.0"
+    "markdownlint-cli": "^0.31.0"
   }
 }
