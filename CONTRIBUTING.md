@@ -15,6 +15,8 @@ Use your best judgment and feel free to propose changes to anything in this repo
 **NOTE:** Always be sure to use **_only_** approved versions from the [AppDev Workstation Configuration][repo--appdev-workstation-configuration] guide.
 
 - Install [Git][git] and clone this repository.
+- Install nvm
+- Install (via nvm) node v16.x
 - Install [VS Code][vscode].
   - Install all recommended VS Code extensions (included in /.vscode/extensions.json).
 
