@@ -1,14 +1,14 @@
 name: Backup Repository
 
 on:
-  schedule:
-    - cron: '0 0 * * *'
+#  schedule:
+#    - cron: '0 0 * * *'
 
-  pull_request:
-    branches:
-      - develop
-    types:
-      - closed
+#  pull_request:
+#    branches:
+#      - develop
+#    types:
+#      - closed
 
   workflow_dispatch:
 
